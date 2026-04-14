@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BurnCoach - 개인정보처리방침</title>
+    <title>BurnCoach - Privacy Policy</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
@@ -20,6 +20,28 @@
             border-radius: 16px;
             padding: 40px;
             box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+        }
+        .lang-toggle {
+            display: flex;
+            justify-content: flex-end;
+            margin-bottom: 16px;
+            gap: 4px;
+        }
+        .lang-btn {
+            padding: 6px 14px;
+            border: 1px solid #d1d1d6;
+            border-radius: 8px;
+            background: #fff;
+            font-size: 13px;
+            font-weight: 500;
+            color: #424245;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .lang-btn.active {
+            background: #1d1d1f;
+            color: #fff;
+            border-color: #1d1d1f;
         }
         h1 {
             font-size: 28px;
@@ -87,6 +109,8 @@
             font-size: 13px;
             color: #86868b;
         }
+        .lang-content { display: none; }
+        .lang-content.active { display: block; }
         @media (max-width: 600px) {
             .container { padding: 24px 20px; }
             h1 { font-size: 24px; }
@@ -95,6 +119,14 @@
 </head>
 <body>
 <div class="container">
+
+    <div class="lang-toggle">
+        <button class="lang-btn active" onclick="switchLang('ko')">한국어</button>
+        <button class="lang-btn" onclick="switchLang('en')">English</button>
+    </div>
+
+    <!-- ==================== 한국어 ==================== -->
+    <div id="lang-ko" class="lang-content active">
 
     <h1>BurnCoach 개인정보처리방침</h1>
     <p class="subtitle">시행일: 2026년 4월 14일 | 최종 수정: 2026년 4월 14일</p>
@@ -197,6 +229,128 @@
         <p>&copy; 2026 BurnCoach. All rights reserved.</p>
     </div>
 
+    </div>
+
+    <!-- ==================== English ==================== -->
+    <div id="lang-en" class="lang-content">
+
+    <h1>BurnCoach Privacy Policy</h1>
+    <p class="subtitle">Effective: April 14, 2026 | Last updated: April 14, 2026</p>
+
+    <div class="highlight">
+        <p><strong>BurnCoach does not operate any external servers and does not transmit your data externally.</strong> All data is stored exclusively on your devices (iPhone, Apple Watch) and within Apple HealthKit.</p>
+    </div>
+
+    <h2>1. Overview</h2>
+    <p>BurnCoach (the "App") is a fat-burn coaching app based on real-time heart rate monitoring via Apple Watch. This Privacy Policy describes the types of information the App collects, how it is used, and how it is stored.</p>
+
+    <h2>2. Information We Collect</h2>
+
+    <h3>2-1. Information You Provide</h3>
+    <table>
+        <tr><th>Item</th><th>Purpose</th></tr>
+        <tr><td>Age</td><td>Estimate maximum heart rate (220 - age formula)</td></tr>
+        <tr><td>Max heart rate (optional)</td><td>Improve heart rate zone accuracy</td></tr>
+        <tr><td>Workout goal (zone, duration)</td><td>Personalized coaching</td></tr>
+        <tr><td>Voice coaching frequency</td><td>Configure voice prompt intervals</td></tr>
+    </table>
+
+    <h3>2-2. Information Read from Apple HealthKit</h3>
+    <p>The App accesses the following health data only after your explicit authorization.</p>
+    <table>
+        <tr><th>Category</th><th>Items</th></tr>
+        <tr><td>Cardiovascular</td><td>Heart rate, resting HR, VO2 Max, HRV, walking average HR</td></tr>
+        <tr><td>Body composition</td><td>Weight, body fat %, BMI, lean body mass, height</td></tr>
+        <tr><td>Activity</td><td>Steps, active calories, basal calories, exercise minutes, distance</td></tr>
+        <tr><td>Nutrition</td><td>Dietary energy, protein, carbohydrates, fat, water</td></tr>
+        <tr><td>Sleep</td><td>Sleep duration</td></tr>
+        <tr><td>Vitals</td><td>Blood oxygen, respiratory rate, body temperature, blood pressure</td></tr>
+    </table>
+
+    <h3>2-3. Information Written to Apple HealthKit</h3>
+    <ul>
+        <li>Workout session data (type, duration, heart rate, calories, distance)</li>
+        <li>Body composition data (weight, body fat % &mdash; when manually entered)</li>
+        <li>Water intake (when manually entered)</li>
+    </ul>
+
+    <h3>2-4. Automatically Generated Information</h3>
+    <table>
+        <tr><th>Item</th><th>Purpose</th></tr>
+        <tr><td>Workout reports (time, HR statistics, zone distribution)</td><td>Workout history and PDF report generation</td></tr>
+        <tr><td>Coaching message history</td><td>Real-time coaching feedback during workouts</td></tr>
+    </table>
+
+    <h2>3. How We Use Your Information</h2>
+    <ul>
+        <li>Real-time heart rate&ndash;based fat-burn zone coaching (voice, haptic, and visual feedback)</li>
+        <li>Post-workout detailed report generation and PDF export</li>
+        <li>Health trend charts (weight, body fat, heart rate, VO2 Max, etc.)</li>
+        <li>Workout history management and periodic summary statistics</li>
+    </ul>
+
+    <h2>4. Data Storage and Retention</h2>
+    <div class="highlight">
+        <p><strong>All data is stored only on your devices.</strong></p>
+    </div>
+    <ul>
+        <li><strong>iPhone</strong>: Workout records and user profile stored in SwiftData (local database)</li>
+        <li><strong>Apple Watch</strong>: Holds temporary data during workout sessions only; transferred to iPhone upon completion</li>
+        <li><strong>Apple HealthKit</strong>: Encrypted on-device storage per Apple's security policies</li>
+        <li><strong>Device communication</strong>: Data is synced between iPhone and Apple Watch via Apple's WatchConnectivity framework through encrypted channels. No external servers are involved.</li>
+    </ul>
+
+    <h2>5. Third-Party Sharing</h2>
+    <p>BurnCoach <strong>does not provide, sell, or share your data with any third party.</strong></p>
+    <ul>
+        <li>No external servers (we do not operate any servers)</li>
+        <li>No advertising networks</li>
+        <li>No analytics tools</li>
+        <li>No advertising identifier (IDFA) collection</li>
+    </ul>
+
+    <h2>6. Your Rights</h2>
+    <ul>
+        <li><strong>Revoke HealthKit access</strong>: Go to iPhone Settings &rarr; Health &rarr; Data Access &amp; Devices &rarr; BurnCoach to revoke permissions at any time.</li>
+        <li><strong>Delete app data</strong>: Uninstalling the App permanently deletes all workout records and profile data stored in SwiftData.</li>
+        <li><strong>Delete HealthKit data</strong>: You can individually delete data recorded by BurnCoach from the Health app.</li>
+        <li><strong>Delete workout records</strong>: Individual workout records can be deleted directly from the History tab within the App.</li>
+    </ul>
+
+    <h2>7. Children's Privacy</h2>
+    <p>BurnCoach is not directed at children under the age of 14, and we do not knowingly collect personal information from children.</p>
+
+    <h2>8. Changes to This Policy</h2>
+    <p>If this policy is updated, changes will be posted on this page with a revised effective date. Significant changes may be communicated through in-app notifications.</p>
+
+    <h2>9. Contact Us</h2>
+    <p>If you have any questions regarding this Privacy Policy, please contact us:</p>
+    <ul>
+        <li><strong>Developer</strong>: John Kim</li>
+        <li><strong>Email</strong>: <a href="mailto:sukhaverse@gmail.com">sukhaverse@gmail.com</a></li>
+        <li><strong>GitHub</strong>: <a href="https://github.com/blue-code/BurnCoach">github.com/blue-code/BurnCoach</a></li>
+    </ul>
+
+    <div class="footer">
+        <p>&copy; 2026 BurnCoach. All rights reserved.</p>
+    </div>
+
+    </div>
+
 </div>
+
+<script>
+function switchLang(lang) {
+    document.querySelectorAll('.lang-content').forEach(el => el.classList.remove('active'));
+    document.querySelectorAll('.lang-btn').forEach(el => el.classList.remove('active'));
+    document.getElementById('lang-' + lang).classList.add('active');
+    document.querySelector('[onclick="switchLang(\'' + lang + '\')"]').classList.add('active');
+    document.documentElement.lang = lang;
+}
+// Auto-detect browser language
+if (navigator.language && !navigator.language.startsWith('ko')) {
+    switchLang('en');
+}
+</script>
 </body>
 </html>
